@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
+[SelectionBase]
 public class GridCube : MonoBehaviour
 {
+    [SerializeField] [Range(0,20)] float gridLength = 10;
+    [SerializeField] GameObject Label = null;
     void Awake()
     {
         
@@ -13,8 +16,9 @@ public class GridCube : MonoBehaviour
     void Update()
     {
        
-        float x = Mathf.RoundToInt(transform.position.x / 10) * 10;
-        float z = Mathf.RoundToInt(transform.position.z / 10) * 10;
+        float x = Mathf.RoundToInt(transform.position.x / gridLength) * gridLength;
+        float z = Mathf.RoundToInt(transform.position.z / gridLength) * gridLength;
         transform.position = new Vector3(x, 0, z);
+        Label.GetComponent<TextMesh>().text = x/10 + " , " + z/10;
     }
 }
