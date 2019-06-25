@@ -6,18 +6,19 @@ using UnityEngine;
 [SelectionBase]
 public class GridCube : MonoBehaviour
 {
-    [SerializeField] [Range(0,20)] float gridLength = 10;
+    
     [SerializeField] GameObject Label = null;
+    Waypoint waypoint;
     void Awake()
     {
-        
+        waypoint = GetComponent<Waypoint>();
     }
 
     void Update()
     {
-       
-        float x = Mathf.RoundToInt(transform.position.x / gridLength) * gridLength;
-        float z = Mathf.RoundToInt(transform.position.z / gridLength) * gridLength;
+        int gridLength = waypoint.GetGridLength();
+        float x = waypoint.GetPosition().x * gridLength;
+        float z = waypoint.GetPosition().y * gridLength;
         transform.position = new Vector3(x, 0, z);
         Label.GetComponent<TextMesh>().text = x/10 + " , " + z/10;
     }
