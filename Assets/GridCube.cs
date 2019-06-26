@@ -17,10 +17,10 @@ public class GridCube : MonoBehaviour
     void Update()
     {
         int gridLength = waypoint.GetGridLength();
-        float x = waypoint.GetPosition().x * gridLength;
-        float z = waypoint.GetPosition().y * gridLength;
-        transform.position = new Vector3(x, 0, z);
-        Label.GetComponent<TextMesh>().text = x/10 + " , " + z/10;
-        gameObject.name = x / 10 + " , " + z / 10;
+        float x = waypoint.GetPosition().x ;
+        float z = waypoint.GetPosition().y ;
+        transform.position = new Vector3(x*gridLength, 0, z* gridLength);
+        Label.GetComponent<TextMesh>().text = x + " , " + z;
+        gameObject.name = x  + " , " + z ;
     }
 }

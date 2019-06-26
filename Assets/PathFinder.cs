@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
-    [SerializeField] Waypoint StartPoint;
-    [SerializeField] Waypoint EndPoint;
+    [SerializeField] Waypoint StartPoint = null;
+    [SerializeField] Waypoint EndPoint = null;
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
 
     // Start is called before the first frame update
@@ -14,14 +14,15 @@ public class PathFinder : MonoBehaviour
         Waypoint[] waypoints = FindObjectsOfType<Waypoint>();
         foreach (Waypoint waypoint in waypoints)
         {
-            if (grid.ContainsKey(waypoint.GetPosition()))
+            var gridPos = waypoint.GetPosition() * 10;
+            if (grid.ContainsKey(gridPos))
             {
                 Debug.LogWarning("Waypoint " + waypoint.name + " is Overlapping");
             }
             else
             {
                 waypoint.SetTopColor(Color.grey);
-                grid.Add(waypoint.GetPosition(), waypoint);
+                grid.Add(gridPos, waypoint);
             }
         }
         StartPoint.SetTopColor(Color.green);
