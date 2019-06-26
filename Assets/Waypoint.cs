@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    public bool visited = false;
+    public Waypoint prev = null;
     const int gridLength = 10;
     Vector2Int position;
     // Start is called before the first frame update
