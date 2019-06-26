@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Waypoint : MonoBehaviour
 {
     const int gridLength = 10;
@@ -19,19 +20,18 @@ public class Waypoint : MonoBehaviour
         int x = Mathf.RoundToInt(transform.position.x / gridLength);
         int z = Mathf.RoundToInt(transform.position.z / gridLength);
         position = new Vector2Int(x, z);
-        print(x);
-        print(z);
+     
     }
     public int GetGridLength()
     {
         return gridLength;
     }
 
-    public Vector2 GetPosition()
+    public Vector2Int GetPosition()
     {
         int x = Mathf.RoundToInt(transform.position.x / gridLength);
         int z = Mathf.RoundToInt(transform.position.z / gridLength);
         
-        return position;
+        return new Vector2Int(x,z);
     }
 }

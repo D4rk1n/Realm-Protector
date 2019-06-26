@@ -21,5 +21,6 @@ public class GridCube : MonoBehaviour
         float z = waypoint.GetPosition().y * gridLength;
         transform.position = new Vector3(x, 0, z);
         Label.GetComponent<TextMesh>().text = x/10 + " , " + z/10;
+        gameObject.name = x / 10 + " , " + z / 10;
     }
 }
