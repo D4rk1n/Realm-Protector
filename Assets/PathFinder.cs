@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
+    [SerializeField] Waypoint StartPoint;
+    [SerializeField] Waypoint EndPoint;
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,8 @@ public class PathFinder : MonoBehaviour
                 grid.Add(waypoint.GetPosition(), waypoint);
             }
         }
+        StartPoint.SetTopColor(Color.green);
+        EndPoint.SetTopColor(Color.cyan);
     }
 
     // Update is called once per frame
