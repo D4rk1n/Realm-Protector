@@ -11,12 +11,15 @@ public class PathFinder : MonoBehaviour
         Waypoint[] waypoints = FindObjectsOfType<Waypoint>();
         foreach (Waypoint waypoint in waypoints)
         {
-            if(grid.ContainsKey(waypoint.GetPosition()))
+            if (grid.ContainsKey(waypoint.GetPosition()))
             {
-                Debug.LogWarning("Waypoint " + waypoint.name+ " is Overlapping");
+                Debug.LogWarning("Waypoint " + waypoint.name + " is Overlapping");
             }
             else
-            grid.Add(waypoint.GetPosition(), waypoint);
+            {
+                waypoint.SetTopColor(Color.grey);
+                grid.Add(waypoint.GetPosition(), waypoint);
+            }
         }
     }
 
