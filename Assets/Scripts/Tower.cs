@@ -7,6 +7,7 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] Transform TowerHead = null;
      Transform Enemy = null;
+    public Waypoint Base = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +74,7 @@ public class Tower : MonoBehaviour
     }
     private void OnDestroy()
     {
-        
+        Base.hasTower = false;
     }
 
 }
