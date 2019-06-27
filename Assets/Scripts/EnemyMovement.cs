@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
             Waypoint wp = path.Pop();
            // print(wp);
             transform.position = wp.transform.position;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
         }
     }
 

@@ -14,11 +14,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Health <= 0)
-            Destroy(gameObject);
+       /* if (Health <= 0)
+            Destroy(gameObject);*/
     }
     private void OnParticleCollision(GameObject other)
     {
+        print("hit");
         Health--;
     }
 }
