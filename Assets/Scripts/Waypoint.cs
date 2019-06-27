@@ -44,7 +44,6 @@ public class Waypoint : MonoBehaviour
         {
             if (!hasTower)
             {
-                print("MouseClicked");
                 GetComponentInParent<TowersFactory>().CreateTower(this);
             }
         }

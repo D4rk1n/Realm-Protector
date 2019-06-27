@@ -18901,7 +18901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d339761e6b71944081872a5a998870c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 6
   OnHitFX: {fileID: 4616491520872340039}
   DeathFX: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0, type: 3}
 --- !u!54 &8711591223964312894

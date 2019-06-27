@@ -28,16 +28,17 @@ public class TowersFactory : MonoBehaviour
         else if(towers.Count == 3)
         {
             var oldTower = towers.Dequeue();
-           while(oldTower == null)
+            if (oldTower == null)
             {
-                oldTower = towers.Dequeue();
+                InstantiateNew(waypoint);
             }
-          
+            else
+            {
                 oldTower.Base.hasTower = false;
                 oldTower.Base = waypoint;
                 oldTower.transform.position = waypoint.transform.position;
                 towers.Enqueue(oldTower);
-            
+            }
 
         }
     }
@@ -47,6 +48,5 @@ public class TowersFactory : MonoBehaviour
         Tower newTower = Instantiate(tower, waypoint.transform);
         newTower.Base = waypoint;
         towers.Enqueue(newTower);
-        print(towers.Count);
     }
 }
