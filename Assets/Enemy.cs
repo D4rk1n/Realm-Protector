@@ -17,4 +17,8 @@ public class Enemy : MonoBehaviour
        
         Health--;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(collision.gameObject);
+    }
 }
