@@ -71,5 +71,9 @@ public class Tower : MonoBehaviour
             emit.enabled = Fire;
         
     }
+    private void OnDestroy()
+    {
+        
+    }
 
 }
