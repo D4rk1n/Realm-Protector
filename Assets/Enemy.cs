@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    [SerializeField] Transform TowerHead = null;
-    [SerializeField] Transform Enemy = null;
+    [SerializeField] int Health = 5 ;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,11 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TowerHead.LookAt(Enemy);
+        if (Health <= 0)
+            Destroy(gameObject);
+    }
+    private void OnParticleCollision(GameObject other)
+    {
+        Health--;
     }
 }

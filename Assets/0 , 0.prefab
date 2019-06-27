@@ -39,7 +39,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8037144403577695478}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: {fileID: 8037144403577695478}
+  waypoint: {fileID: 6742968478352435944}
 --- !u!114 &6742968478352435944
 MonoBehaviour:
   m_ObjectHideFlags: 0
