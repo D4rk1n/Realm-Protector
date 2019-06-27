@@ -42,8 +42,11 @@ public class Waypoint : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(!hasTower)
-            Instantiate<Tower>(tower,transform);
+            if (!hasTower)
+            {
+                Instantiate<Tower>(tower, transform);
+                hasTower = true;
+            }
         }
     }
 }
