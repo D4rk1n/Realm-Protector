@@ -6,7 +6,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] Transform TowerHead = null;
-    [SerializeField] Transform Enemy = null;
+     Transform Enemy = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +16,28 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetEnemy();
         TowerHead.LookAt(Enemy);
         ProccessFiring();
+    }
+
+    private void SetEnemy()
+    {
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        if (enemies.Length > 0)
+        {
+            Enemy NearEnemy = enemies[0];
+            foreach (Enemy enemy in enemies)
+            {
+                float NearDist = Vector3.Distance(transform.position, NearEnemy.transform.position);
+                float Dist = Vector3.Distance(transform.position, enemy.transform.position);
+                if (Dist < NearDist)
+                {
+                    NearEnemy = enemy;
+                }
+            }
+            Enemy = NearEnemy.transform;
+        }
     }
 
     private void ProccessFiring()
