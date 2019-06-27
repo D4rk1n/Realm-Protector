@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
-    int pathNo = 0;
     [SerializeField] Waypoint StartPoint = null;
     [SerializeField] Waypoint EndPoint = null;
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
@@ -31,12 +30,9 @@ public class PathFinder : MonoBehaviour
     public Stack<Waypoint> GetPath()
     {
         Stack<Waypoint> path = new Stack<Waypoint>();
-        pathNo++;
-        print(pathNo + ") Stak before : "  );
         CreateGrid();
         BFS();
         CreatePath(ref path);
-        print(pathNo + ") Stak after : "  );
         grid.Clear();
         return path;
     }

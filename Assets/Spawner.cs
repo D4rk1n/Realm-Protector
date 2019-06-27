@@ -9,13 +9,16 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(Spawn());
     }
 
     IEnumerator Spawn()
     {
-        print("Spawn");
-        yield return new WaitForSeconds(SpawnTime);
+        while (true)
+        {
+            Instantiate<GameObject>(Enemy);
+            yield return new WaitForSeconds(SpawnTime);
+        }
     }
     // Update is called once per frame
     void Update()
