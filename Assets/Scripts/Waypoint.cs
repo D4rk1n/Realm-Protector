@@ -36,5 +36,12 @@ public class Waypoint : MonoBehaviour
 
         return new Vector2Int(x, z);
     }
+    private void OnMouseOver()
+    {
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            print(gameObject.name);
+        }
+    }
 }
 

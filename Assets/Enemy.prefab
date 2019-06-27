@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 4863975835637209554}
   - component: {fileID: 2212408390748736121}
   - component: {fileID: 8711591223964312894}
+  - component: {fileID: 474180157134551913}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -89,6 +90,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &474180157134551913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982151322503587994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90adb4e1baee6564892a5dec2a631115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &570756007687513362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4186752768196848, guid: 0dc657ece5d6f514297eb54082bc243b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4186752768196848, guid: 0dc657ece5d6f514297eb54082bc243b, type: 3}
       propertyPath: m_LocalPosition.z
