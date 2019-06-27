@@ -18939,6 +18939,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 877963297343150869}
     m_Modifications:
+    - target: {fileID: 1670769832628526, guid: 0dc657ece5d6f514297eb54082bc243b, type: 3}
+      propertyPath: m_Name
+      value: Enemy_A
+      objectReference: {fileID: 0}
     - target: {fileID: 4186752768196848, guid: 0dc657ece5d6f514297eb54082bc243b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -18995,10 +18999,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1670769832628526, guid: 0dc657ece5d6f514297eb54082bc243b, type: 3}
-      propertyPath: m_Name
-      value: Enemy_A
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc657ece5d6f514297eb54082bc243b, type: 3}
 --- !u!1 &571486693933347900 stripped
@@ -19023,6 +19023,11 @@ PrefabInstance:
     - target: {fileID: 1505610324796538, guid: dcf9cd10c07cf0c49863969befadb243, type: 3}
       propertyPath: m_Name
       value: Enemy Hit Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 198801791596541968, guid: dcf9cd10c07cf0c49863969befadb243,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4208721479801298, guid: dcf9cd10c07cf0c49863969befadb243, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19066,6 +19071,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4208721479801298, guid: dcf9cd10c07cf0c49863969befadb243, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198997797312625902, guid: dcf9cd10c07cf0c49863969befadb243,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198554004130006392, guid: dcf9cd10c07cf0c49863969befadb243,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198098995208406150, guid: dcf9cd10c07cf0c49863969befadb243,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

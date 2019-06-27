@@ -24,5 +24,6 @@ public class EnemyMovement : MonoBehaviour
             transform.position = wp.transform.position;
             yield return new WaitForSeconds(1f);
         }
+        print("Congrats");
     }
 }
