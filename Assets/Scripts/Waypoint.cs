@@ -8,6 +8,8 @@ public class Waypoint : MonoBehaviour
     public bool visited = false;
     public Waypoint prev = null;
     const int gridLength = 10;
+    [SerializeField]Tower tower = null;
+    bool hasTower = false;
     Vector2Int position;
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,8 @@ public class Waypoint : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            print(gameObject.name);
+            if(!hasTower)
+            Instantiate<Tower>(tower,transform);
         }
     }
 }

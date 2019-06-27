@@ -247,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visited: 0
   prev: {fileID: 0}
+  tower: {fileID: 1633303016, guid: 12703a48fb3ef764090f36958f459ed9, type: 3}
 --- !u!65 &5501801690609994231
 BoxCollider:
   m_ObjectHideFlags: 0
