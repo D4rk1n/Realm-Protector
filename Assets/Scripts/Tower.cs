@@ -25,12 +25,10 @@ public class Tower : MonoBehaviour
 
         if (NearEnemy())
         {
-
             SetEmission(true);
         }
         else
         {
-
             SetEmission(false);
         }
     }
@@ -41,7 +39,6 @@ public class Tower : MonoBehaviour
         {
             var x = Mathf.Abs(transform.position.x - Enemy.position.x);
             var z = Mathf.Abs(transform.position.z - Enemy.position.z);
-
             if (x <= 10 && z <= 10) return true;
         }
         return false;

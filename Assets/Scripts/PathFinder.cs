@@ -16,16 +16,6 @@ public class PathFinder : MonoBehaviour
         Vector2Int.down,
         Vector2Int.left
     };
-    
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-        
-    }
 
     public Stack<Waypoint> GetPath()
     {
@@ -36,17 +26,21 @@ public class PathFinder : MonoBehaviour
         grid.Clear();
         return path;
     }
-    private void CreatePath(ref Stack<Waypoint> path)
+
+    private void CreateGrid()
     {
-        Waypoint wp = EndPoint;
-        path.Push(wp);
-        while (wp != null && wp.prev != null)
+        Waypoint[] waypoints = FindObjectsOfType<Waypoint>();
+        foreach (Waypoint waypoint in waypoints)
         {
-            
-            
-          
-            wp = wp.prev;
-            path.Push(wp);
+            var gridPos = waypoint.GetPosition();
+            if (grid.ContainsKey(gridPos))
+            {
+                Debug.LogWarning("Waypoint " + waypoint.name + " is Overlapping");
+            }
+            else
+            {
+                grid.Add(gridPos, waypoint);
+            }
         }
     }
 
@@ -71,55 +65,42 @@ public class PathFinder : MonoBehaviour
 
     }
 
+
     private bool ExploreNeighbours(Waypoint waypoint,ref Queue<Waypoint> Q,ref LinkedList<Waypoint> way)
     {
         
         foreach (Vector2Int direction in Dir)
         {
             Vector2Int neighbour = waypoint.GetPosition() + direction;
-            
             if (grid.ContainsKey(neighbour))
             {
                 if (!grid[neighbour].visited)
                 {
-                   
-                    
+
                     grid[neighbour].prev = waypoint;
                     if (grid[neighbour] == EndPoint) return true;
                     Q.Enqueue(grid[neighbour]);
-                    
-                    
+
                 }
             }
-          
-                
-            
         }
         return false;
     }
 
-    private void CreateGrid()
-    {
-        Waypoint[] waypoints = FindObjectsOfType<Waypoint>();
-        foreach (Waypoint waypoint in waypoints)
-        {
-            var gridPos = waypoint.GetPosition() ;
-            if (grid.ContainsKey(gridPos))
-            {
-                Debug.LogWarning("Waypoint " + waypoint.name + " is Overlapping");
-            }
-            else
-            {
-             
-                grid.Add(gridPos, waypoint);
-            }
-        }
-        print(waypoints.Length);
-    }
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void CreatePath(ref Stack<Waypoint> path)
     {
-        
+        Waypoint wp = EndPoint;
+        path.Push(wp);
+        while (wp != null && wp.prev != null)
+        {
+
+
+
+            wp = wp.prev;
+            path.Push(wp);
+        }
     }
 }
