@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3674,11 +3674,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minKillSpeed: 0
-    maxKillSpeed: 10000
+    maxKillSpeed: 500
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4757,7 +4757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerHead: {fileID: 1225913834856148762}
-  Enemy: {fileID: 0}
 --- !u!1001 &1228849801824386553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4840,10 +4839,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1228849801884405785}
     m_Modifications:
-    - target: {fileID: 1405215511811078, guid: 8238921bafd389b44921fe80cc7f1f9d, type: 3}
-      propertyPath: m_Name
-      value: Tower_A_Top
-      objectReference: {fileID: 0}
     - target: {fileID: 4101459293844584, guid: 8238921bafd389b44921fe80cc7f1f9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4899,6 +4894,10 @@ PrefabInstance:
     - target: {fileID: 4101459293844584, guid: 8238921bafd389b44921fe80cc7f1f9d, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405215511811078, guid: 8238921bafd389b44921fe80cc7f1f9d, type: 3}
+      propertyPath: m_Name
+      value: Tower_A_Top
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8238921bafd389b44921fe80cc7f1f9d, type: 3}
