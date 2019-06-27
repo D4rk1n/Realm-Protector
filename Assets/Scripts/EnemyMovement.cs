@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
         var path = pathFinder.GetPath();
         StartCoroutine(FollowPath(path));
 
-        // print("Enemy " +path.Count);
+        
     }
     IEnumerator FollowPath(Stack<Waypoint> path)
     {
@@ -21,9 +21,8 @@ public class EnemyMovement : MonoBehaviour
         while (path.Count > 0)
         {
             Waypoint wp = path.Pop();
-           // print(wp);
             transform.position = wp.transform.position;
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 

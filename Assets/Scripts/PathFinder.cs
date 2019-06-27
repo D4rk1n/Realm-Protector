@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
+    int pathNo = 0;
     [SerializeField] Waypoint StartPoint = null;
     [SerializeField] Waypoint EndPoint = null;
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
-    Stack<Waypoint> path = new Stack<Waypoint>();
+  
     Vector2Int[] Dir =
     {
         Vector2Int.up,
@@ -29,14 +30,17 @@ public class PathFinder : MonoBehaviour
 
     public Stack<Waypoint> GetPath()
     {
+        Stack<Waypoint> path = new Stack<Waypoint>();
+        pathNo++;
+        print(pathNo + ") Stak before : "  );
         CreateGrid();
         BFS();
-        CreatePath();
-        
-
+        CreatePath(ref path);
+        print(pathNo + ") Stak after : "  );
+        grid.Clear();
         return path;
     }
-    private void CreatePath()
+    private void CreatePath(ref Stack<Waypoint> path)
     {
         Waypoint wp = EndPoint;
         path.Push(wp);
@@ -114,7 +118,7 @@ public class PathFinder : MonoBehaviour
                 grid.Add(gridPos, waypoint);
             }
         }
-
+        print(waypoints.Length);
     }
 
     // Update is called once per frame
