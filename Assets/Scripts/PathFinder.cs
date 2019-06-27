@@ -44,7 +44,7 @@ public class PathFinder : MonoBehaviour
         {
             
             
-            wp.prev.SetTopColor(Color.magenta);
+          
             wp = wp.prev;
             path.Push(wp);
         }
@@ -110,12 +110,11 @@ public class PathFinder : MonoBehaviour
             }
             else
             {
-                waypoint.SetTopColor(Color.grey);
+             
                 grid.Add(gridPos, waypoint);
             }
         }
-        StartPoint.SetTopColor(Color.blue);
-        EndPoint.SetTopColor(Color.green);
+
     }
 
     // Update is called once per frame

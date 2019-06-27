@@ -8,7 +8,7 @@ public class GridCube : MonoBehaviour
 {
     
     [SerializeField] GameObject Label = null;
-    Waypoint waypoint;
+    public Waypoint waypoint;
     void Awake()
     {
         waypoint = GetComponent<Waypoint>();
@@ -20,7 +20,9 @@ public class GridCube : MonoBehaviour
         float x = waypoint.GetPosition().x ;
         float z = waypoint.GetPosition().y ;
         transform.position = new Vector3(x*gridLength, 0, z* gridLength);
+        if(Label != null)
         Label.GetComponent<TextMesh>().text = x + " , " + z;
+
         gameObject.name = x  + " , " + z ;
     }
 }

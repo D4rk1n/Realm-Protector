@@ -12,7 +12,7 @@ public class Waypoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class Waypoint : MonoBehaviour
         int x = Mathf.RoundToInt(transform.position.x / gridLength);
         int z = Mathf.RoundToInt(transform.position.z / gridLength);
         position = new Vector2Int(x, z);
-     
+
     }
     public int GetGridLength()
     {
@@ -33,13 +33,8 @@ public class Waypoint : MonoBehaviour
     {
         int x = Mathf.RoundToInt(transform.position.x / gridLength);
         int z = Mathf.RoundToInt(transform.position.z / gridLength);
-        
-        return new Vector2Int(x,z);
-    }
-    public void SetTopColor(Color color)
-    {
-        MeshRenderer topRenderer = transform.Find("Up").GetComponent<MeshRenderer>();
-        topRenderer.material.color = color;
 
+        return new Vector2Int(x, z);
     }
 }
+
