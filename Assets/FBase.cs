@@ -26,7 +26,8 @@ public class FBase : MonoBehaviour
         {
             currHealth--;
             var lostHeart = Hearts.Dequeue();
-            print(Hearts.Count);
+            var FX = Instantiate(lostHeart.DeathFX, new Vector3(lostHeart.transform.position.x - 6f, lostHeart.transform.position.y + 13f, lostHeart.transform.position.z - 6f), Quaternion.identity);
+            Destroy(FX.gameObject, FX.main.duration);
             Destroy(lostHeart.gameObject);
         }
     }

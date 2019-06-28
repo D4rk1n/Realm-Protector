@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8707571522078670320}
   - component: {fileID: 331980025476344206}
   m_Layer: 0
-  m_Name: HeartREd
+  m_Name: HeartRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fffde575201db4887792c6d144f9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathFX: {fileID: 198537984209914932, guid: 8e5002ff61aaff14b8f630954779cee5, type: 3}
 --- !u!1 &5632382951641186511
 GameObject:
   m_ObjectHideFlags: 0
