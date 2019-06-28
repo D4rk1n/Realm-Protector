@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FBase : MonoBehaviour
 {
     [SerializeField] Heart heart = null;
     [SerializeField] int Health = 3;
+    [SerializeField] Text ScoreLabel = null;
+    float deltaScore =0;
+    int Score = 0;
     public bool Alive = true;
     Queue<Heart> Hearts = new Queue<Heart>();
     public int currHealth;
     // Start is called before the first frame update
     void Start()
     {
+        ScoreLabel.text = "0";
         currHealth = Health;
         for(int i = Health; i > 0; i--)
         {
@@ -40,5 +45,19 @@ public class FBase : MonoBehaviour
         {
             Alive = false;
         }
+        if(Alive)
+        {
+            deltaScore +=  Time.deltaTime;
+            if (deltaScore > 1)
+            {
+                Score += (int)deltaScore * 10;
+                deltaScore = 0;
+            }
+        }
+        ScoreLabel.text = Score.ToString();
+    }
+    public void IncreaseScore()
+    {
+        Score += 100;
     }
 }

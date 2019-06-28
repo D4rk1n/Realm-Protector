@@ -28,7 +28,8 @@ public class TowersFactory : MonoBehaviour
         while(towers.Count > 0)
         {
             var dTower = towers.Dequeue();
-            Destroy(dTower.gameObject);
+            if(dTower != null)
+                Destroy(dTower.gameObject);
         }
     }
 

@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
 
         if (Health <= 0)
         {
+            FindObjectOfType<FBase>().IncreaseScore();
             var FX = Instantiate(DeathFX, new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z), Quaternion.identity);
             Destroy(FX.gameObject, FX.main.duration);
             Destroy(gameObject);
