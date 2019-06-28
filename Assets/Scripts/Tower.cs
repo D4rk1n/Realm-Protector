@@ -6,6 +6,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] Transform TowerHead = null;
+    public ParticleSystem DeathFX= null;
      Transform Enemy = null;
     public Waypoint Base = null;
     // Start is called before the first frame update
@@ -72,9 +73,16 @@ public class Tower : MonoBehaviour
             emit.enabled = Fire;
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        var FX = Instantiate(DeathFX, transform.position, Quaternion.identity);
+        Destroy(FX.gameObject, FX.main.duration);
+        Destroy(gameObject);
+    }
     private void OnDestroy()
     {
         Base.hasTower = false;
+        
     }
 
 }

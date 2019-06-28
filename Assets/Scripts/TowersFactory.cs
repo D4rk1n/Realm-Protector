@@ -28,8 +28,12 @@ public class TowersFactory : MonoBehaviour
         while(towers.Count > 0)
         {
             var dTower = towers.Dequeue();
-            if(dTower != null)
+            if (dTower != null)
+            {
+                var FX = Instantiate(dTower.DeathFX, dTower.transform.position, Quaternion.identity);
+                Destroy(FX.gameObject, FX.main.duration);
                 Destroy(dTower.gameObject);
+            }
         }
     }
 

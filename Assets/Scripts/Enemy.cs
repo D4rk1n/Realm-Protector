@@ -26,8 +26,9 @@ public class Enemy : MonoBehaviour
         Health--;
         OnHitFX.Play();
     }
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
+        
         Destroy(other.gameObject);
-    }
+    }*/
 }

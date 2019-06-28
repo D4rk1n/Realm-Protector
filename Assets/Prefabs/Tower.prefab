@@ -4759,6 +4759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerHead: {fileID: 1225913834856148762}
+  DeathFX: {fileID: 198537984209914932, guid: f49e7e36633dddf42bf6d546146af13c, type: 3}
   Base: {fileID: 0}
 --- !u!54 &1496700293
 Rigidbody:
