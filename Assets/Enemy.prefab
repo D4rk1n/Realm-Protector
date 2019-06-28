@@ -18888,6 +18888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fda01228f858a40b8285ad24432eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Base: {fileID: 1424176352, guid: a467c20795e0fed40b0d21d2bebe3b04, type: 3}
   CongratsFX: {fileID: 198537984209914932, guid: 508e6e9026ed98248b6d639f68bf330d,
     type: 3}
   pathFinder: {fileID: 0}

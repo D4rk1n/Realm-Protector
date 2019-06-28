@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+     FBase Base = null;
     [SerializeField] ParticleSystem CongratsFX = null;
     public PathFinder pathFinder = null;
     // Start is called before the first frame update
@@ -13,8 +14,8 @@ public class EnemyMovement : MonoBehaviour
         pathFinder = FindObjectOfType<PathFinder>();
         var path = pathFinder.GetPath();
         StartCoroutine(FollowPath(path));
+        Base = FindObjectOfType<FBase>();
 
-        
     }
     IEnumerator FollowPath(Stack<Waypoint> path)
     {
@@ -28,5 +29,6 @@ public class EnemyMovement : MonoBehaviour
         var FX = Instantiate(CongratsFX, new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z), Quaternion.identity);
         Destroy(FX.gameObject, FX.main.duration);
         Destroy(gameObject);
+        Base.TakeDamage();
     }
 }
