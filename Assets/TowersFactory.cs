@@ -1,45 +1,62 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TowersFactory : MonoBehaviour
 {
+    FBase Base =null;
     Queue<Tower> towers = new Queue<Tower>();
     [SerializeField] Tower tower = null;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Base = FindObjectOfType<FBase>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+       if(!Base.Alive)
+        {
+            DestroyTowers();
+        }
     }
 
-   public void CreateTower(Waypoint waypoint)
+    private void DestroyTowers()
     {
-        waypoint.hasTower = true;
-        if (towers.Count < 3)
+        while(towers.Count > 0)
         {
-            InstantiateNew(waypoint);
+            var dTower = towers.Dequeue();
+            Destroy(dTower.gameObject);
         }
-        else if(towers.Count == 3)
+    }
+
+    public void CreateTower(Waypoint waypoint)
+    {
+        if (Base.Alive)
         {
-            var oldTower = towers.Dequeue();
-            if (oldTower == null)
+            waypoint.hasTower = true;
+            if (towers.Count < 3)
             {
                 InstantiateNew(waypoint);
             }
-            else
+            else if (towers.Count == 3)
             {
-                oldTower.Base.hasTower = false;
-                oldTower.Base = waypoint;
-                oldTower.transform.position = waypoint.transform.position;
-                towers.Enqueue(oldTower);
-            }
+                var oldTower = towers.Dequeue();
+                if (oldTower == null)
+                {
+                    InstantiateNew(waypoint);
+                }
+                else
+                {
+                    oldTower.Base.hasTower = false;
+                    oldTower.Base = waypoint;
+                    oldTower.transform.position = waypoint.transform.position;
+                    towers.Enqueue(oldTower);
+                }
 
+            }
         }
     }
 

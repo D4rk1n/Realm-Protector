@@ -6,6 +6,7 @@ public class FBase : MonoBehaviour
 {
     [SerializeField] Heart heart = null;
     [SerializeField] int Health = 3;
+    public bool Alive = true;
     Queue<Heart> Hearts = new Queue<Heart>();
     public int currHealth;
     // Start is called before the first frame update
@@ -30,10 +31,14 @@ public class FBase : MonoBehaviour
             Destroy(FX.gameObject, FX.main.duration);
             Destroy(lostHeart.gameObject);
         }
+     
     }
     // Update is called once per frame
     void Update()
     {
-        
+        if(currHealth == 0)
+        {
+            Alive = false;
+        }
     }
 }
