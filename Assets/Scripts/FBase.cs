@@ -8,6 +8,7 @@ public class FBase : MonoBehaviour
     [SerializeField] Heart heart = null;
     [SerializeField] int Health = 3;
     [SerializeField] Text ScoreLabel = null;
+    [SerializeField] GameObject ScoreUI = null;
     float deltaScore =0;
     int Score = 0;
     public bool Alive = true;
@@ -44,6 +45,7 @@ public class FBase : MonoBehaviour
         if(currHealth == 0)
         {
             Alive = false;
+           ScoreUI.SetActive(true);
         }
         if(Alive)
         {
