@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnTime -= Time.deltaTime/20f;
+        SpawnTime -= Time.deltaTime/10f;
         SpawnTime = Mathf.Clamp(SpawnTime,2, 10);
     }
 }
